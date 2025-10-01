@@ -1,0 +1,307 @@
+/* === MÁSCARA PRINCIPAL === */
+.mascara-agenda {
+  background: linear-gradient(135deg, #0a0a0a, #2a2a2a, #1a1a1a);
+  border: 2px solid #cccccc;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 520px;
+  margin: 12px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+/* === TÍTULO 3D === */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.2em;
+  margin: 8px 0 12px;
+  color: #4a4a4a;
+  text-shadow:
+    0 2px 0 #ffffff,
+    0 4px 0 #cccccc,
+    0 6px 3px rgba(0,0,0,0.3);
+  letter-spacing: -0.5px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* === LOGO MZ === */
+.logo-mz {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2c5a7a;
+  border: 2px solid #c0c0c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: white;
+  user-select: none;
+}
+
+/* === CALENDARIO === */
+.calendar {
+  background: #d1a3d6;
+  border-bottom: 2px solid #cccccc;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+#mes-actual {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #222;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.65em;
+  padding: 3px 0;
+  color: #222;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  background: white;
+  color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-day.other-month {
+  color: #aaa;
+  background: #f5f5f5;
+}
+
+.calendar-day.today {
+  background: #e6c4e6;
+  font-weight: bold;
+}
+
+.calendar-day.has-notes::after {
+  content: "•";
+  position: absolute;
+  bottom: 1px;
+  color: #8e24aa;
+  font-size: 1.2em;
+}
+
+.calendar-day.selected {
+  outline: 2px solid #ab47bc;
+  outline-offset: -1px;
+}
+
+/* Botones del calendario */
+#btn-mes-anterior, #btn-mes-siguiente {
+  background: #ab47bc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+/* === BOTONES DE ACCIÓN === */
+.barra-acciones {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-accion {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform 0.2s ease;
+}
+
+.btn-accion:active {
+  animation: saltar 0.4s ease;
+}
+
+@keyframes saltar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.btn-fecha {
+  background: #8e24aa;
+  color: white;
+}
+
+.btn-nueva, .btn-agregar {
+  background: #ab47bc;
+  color: white;
+}
+
+/* === ETIQUETAS Y TEXTO === */
+label {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 0.95em;
+}
+
+.input-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  min-height: 70px;
+  resize: vertical;
+  background: #222;
+  color: white;
+}
+
+.notas-container h2 {
+  color: white;
+  font-size: 1.3em;
+  margin: 20px 0 12px;
+}
+
+.nota {
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border-left: 3px solid #ab47bc;
+  color: white;
+}
+
+.nota-header {
+  font-weight: bold;
+  color: #d1a3d6;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+}
+
+.acciones {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 5px 10px;
+  font-size: 0.85em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.btn-edit {
+  background: #5d3a7a;
+  color: white;
+}
+
+.btn-delete {
+  background: #b73a3a;
+  color: white;
+}
+
+/* === CONFIRMACIÓN === */
+.overlay-confirm {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+}
+
+.confirm-box {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #555;
+  max-width: 300px;
+  width: 90%;
+}
+
+.confirm-box button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.confirm-yes { background: #b73a3a; color: white; }
+.confirm-no { background: #444; color: white; margin-left: 8px; }
+
+@media (max-width: 500px) {
+  .calendar-day { font-size: 0.6em; }
+  h1 { font-size: 1.8em; }
+  .logo-mz { width: 40px; height: 40px; font-size: 0.8em; }
+}

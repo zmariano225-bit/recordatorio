@@ -1,0 +1,16 @@
+{
+  "name": "Agenda Personal MZ",
+  "short_name": "Agenda MZ",
+  "start_url": "/recordatorio/",
+  "scope": "/recordatorio/",
+  "display": "standalone",
+  "background_color": "#d1a3d6",
+  "theme_color": "#ab47bc",
+  "icons": [
+    {
+      "src": "image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='30' fill='%23d4af37'/><text x='96' y='118' text-anchor='middle' font-family='Cinzel, serif' font-weight='700' font-size='80' fill='%238e24aa'>MZ</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
